@@ -22,7 +22,8 @@
                 "rust-lang.rust-analyzer",
                 "tamasfe.even-better-toml",
                 "EditorConfig.EditorConfig",
-                "ms-vscode.makefile-tools"
+                "ms-vscode.makefile-tools",
+                "anthropic.claude-code"
             ]
         }
     }
