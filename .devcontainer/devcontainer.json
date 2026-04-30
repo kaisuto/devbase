@@ -1,0 +1,29 @@
+{
+    "name": "devbase",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": ".."
+    },
+    "remoteUser": "vscode",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": { "path": "/usr/bin/zsh" }
+                },
+                "editor.formatOnSave": true
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "charliermarsh.ruff",
+                "golang.go",
+                "rust-lang.rust-analyzer",
+                "tamasfe.even-better-toml",
+                "EditorConfig.EditorConfig",
+                "ms-vscode.makefile-tools"
+            ]
+        }
+    }
+}

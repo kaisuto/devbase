@@ -1,0 +1,40 @@
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+
+# fzf base must be set before sourcing oh-my-zsh
+export FZF_BASE="$HOME/.fzf"
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
+
+plugins=(
+    git
+    fzf
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
+
+source "$ZSH/oh-my-zsh.sh"
+
+# ── Language runtimes ─────────────────────────────────────────────────────────
+
+# uv / Python
+export PATH="$HOME/.local/bin:$PATH"
+
+# mise (Go + Node.js)
+eval "$(~/.local/bin/mise activate zsh)"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+
+# Rust
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+
+# fzf binary
+export PATH="$HOME/.fzf/bin:$PATH"
+
+# ── Aliases ───────────────────────────────────────────────────────────────────
+
+alias ls='eza'
+alias ll='eza -la --git'
+alias la='eza -la'
+alias lt='eza --tree --level=2'
+alias cat='bat --paging=never'
